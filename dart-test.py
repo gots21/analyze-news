@@ -9,12 +9,15 @@ import sys
 import os
 from datetime import datetime
 import yfinance as yf
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # 0. 환경 설정
-DART_KEY = '404b9d03b607c3e08b6e815ae12b4a3a31226177'
-GEMINI_KEY = 'AIzaSyD_JWG9LPrwuH4vvBkCyZ95H07nSUvEhek'
-NAVER_ID = 'UJDYIqP9J6qH36B9rR4c'
-NAVER_SECRET = 'lLONMXN69W'
+DART_KEY = os.getenv('DART_KEY')
+GEMINI_KEY = os.getenv('GEMINI_KEY')
+NAVER_ID = os.getenv('NAVER_ID')
+NAVER_SECRET = os.getenv('NAVER_SECRET')
 
 MODEL_ID = "gemma-4-26b-a4b-it"
 client = genai.Client(api_key=GEMINI_KEY)
